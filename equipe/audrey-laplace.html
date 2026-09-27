@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audrey LAPLACE - Masseur-Kinésithérapeute | Alpes Kiné Mouv'</title>
-    <meta name="description" content="Fiche d'Audrey LAPLACE, masseur-kinésithérapeute au cabinet Alpes Kiné Mouv' à Epagny Metz-Tessy. Rééducation active et kinésithérapie générale.">
+    <title>Audrey LAPLACE | Masseur-Kinésithérapeute à Epagny Metz-Tessy - Alpes Kiné Mouv'</title>
+    <meta name="description" content="Profil professionnel d'Audrey LAPLACE, masseur-kinésithérapeute au cabinet Alpes Kiné Mouv' à Epagny Metz-Tessy. Rééducation active et soins personnalisés.">
     
     <meta name="robots" content="index, follow">
     <link rel="sitemap" type="application/xml" href="../sitemap.xml">
@@ -19,16 +19,20 @@
             --blanc: #FFFFFF;
         }
 
-        body {
-            font-family: 'Roboto', sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
             color: var(--texte-sombre);
             background-color: var(--blanc);
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
         }
 
@@ -44,38 +48,47 @@
             z-index: 1000;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 18px;
+        a.logo-container, 
+        a.logo-container:visited, 
+        a.logo-container:hover, 
+        a.logo-container:active {
+            display: flex !important;
+            align-items: center !important;
+            gap: 18px !important;
             text-decoration: none !important;
-            color: inherit;
+            color: inherit !important;
         }
 
-        .logo-container img {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
+        a.logo-container img {
+            height: 50px !important;
+            max-height: 50px !important;
+            width: auto !important;
+            object-fit: contain !important;
             filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
             transition: transform 0.3s ease;
         }
 
-        .logo-container:hover img {
+        a.logo-container:hover img {
             transform: scale(1.03);
         }
 
         .brand-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--bleu-alpin);
-            font-size: 1.35rem;
-            letter-spacing: 0.5px;
+            font-family: 'Montserrat', sans-serif !important;
+            font-weight: 700 !important;
+            color: var(--bleu-alpin) !important;
+            font-size: 1.35rem !important;
+            letter-spacing: 0.5px !important;
             text-decoration: none !important;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         nav a {
-            margin-left: 20px;
-            text-decoration: none;
+            text-decoration: none !important;
             color: var(--texte-sombre);
             font-weight: 500;
             transition: color 0.3s;
@@ -85,59 +98,122 @@
             color: var(--vert-mouvement);
         }
 
-        .btn-doctolib {
-            background-color: var(--vert-mouvement);
-            color: var(--blanc);
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
+        .container {
+            max-width: 1050px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .profile-card {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 35px;
+            background: var(--gris-clair);
+            padding: 35px;
+            border-radius: 16px;
+            border-left: 6px solid var(--vert-mouvement);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .profile-details h1 {
+            margin: 0;
+            color: var(--bleu-alpin);
+            font-size: 2.2rem;
+        }
+
+        .profile-details h3 {
+            margin: 5px 0 15px;
+            color: var(--vert-mouvement);
             font-weight: 600;
-            transition: background-color 0.3s;
+        }
+
+        .quote {
+            font-style: italic;
+            background: var(--blanc);
+            padding: 12px 18px;
+            border-radius: 8px;
+            border-left: 3px solid var(--bleu-alpin);
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none !important;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s, background-color 0.2s;
             display: inline-block;
+        }
+
+        .btn-doctolib {
+            background: var(--vert-mouvement);
+            color: var(--blanc) !important;
         }
 
         .btn-doctolib:hover {
             background-color: #008f58;
+            transform: translateY(-2px);
         }
 
-        .section {
-            padding: 60px 5%;
-            max-width: 1000px;
-            margin: 0 auto;
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
-        .profile-container {
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-            flex-wrap: wrap;
+        .info-box {
+            background: var(--blanc);
+            border: 1px solid #EAEAEA;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
-        .profile-img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--vert-mouvement);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
-        .profile-details {
-            flex: 1;
-            min-width: 280px;
-        }
-
-        .profile-details h1 {
+        .info-box h2 {
             color: var(--bleu-alpin);
+            font-size: 1.3rem;
             margin-top: 0;
-            font-size: 2.2rem;
+            border-bottom: 2px solid var(--gris-clair);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
         }
 
-        .subtitle {
+        .timeline {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+        }
+
+        .timeline li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
             color: var(--vert-mouvement);
-            font-weight: 600;
-            font-size: 1.15rem;
-            margin-bottom: 20px;
+            font-weight: bold;
         }
 
         footer {
@@ -152,6 +228,22 @@
             color: var(--vert-mouvement);
             text-decoration: none;
         }
+
+        @media (max-width: 768px) {
+            .profile-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .profile-photo {
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -165,29 +257,63 @@
             <a href="../index.html">Accueil</a>
             <a href="../plateau-technique.html">Plateau Technique</a>
             <a href="../contact.html">Contact</a>
-            <a href="https://www.doctolib.fr/cabinet-de-kinesitherapie/epagny-metz-tessy/alpes-kine-mouv" class="btn-doctolib" target="_blank">Prendre RDV (Cabinet)</a>
+            <a href="https://www.doctolib.fr/masseur-kinesitherapeute/epagny-metz-tessy/audrey-laplace" class="btn btn-doctolib" target="_blank">Prendre RDV (Audrey LAPLACE)</a>
         </nav>
     </header>
 
-    <section class="section">
-        <div class="profile-container">
-            <img src="../assets/audrey-laplace.jpg" alt="Audrey LAPLACE" class="profile-img" onerror="this.src='https://via.placeholder.com/220?text=Audrey+LAPLACE'">
+    <div class="container">
+        
+        <div class="profile-card">
+            <img src="../assets/audrey-laplace.jpg" alt="Audrey LAPLACE - Masseur-Kinésithérapeute" class="profile-photo" onerror="this.src='https://via.placeholder.com/260x280?text=Audrey+LAPLACE'">
             <div class="profile-details">
                 <h1>Audrey LAPLACE</h1>
-                <div class="subtitle">Masseur-Kinésithérapeute DE | Kinésithérapie &amp; Rééducation Active</div>
+                <h3>Masseur-Kinésithérapeute / Praticienne Alpes Kiné Mouv'</h3>
                 
-                <p>Praticienne au cabinet <strong>Alpes Kiné Mouv'</strong>. Audrey LAPLACE prend en charge les patients pour des séances de rééducation adaptées et personnalisées.</p>
+                <div class="quote">
+                    « Mettre l'accent sur la prévention, l'écoute et le mouvement actif pour restaurer la mobilité au quotidien. »
+                </div>
 
-                <div style="margin-top: 25px;">
-                    <a href="https://www.doctolib.fr/masseur-kinesitherapeute/epagny-metz-tessy/audrey-laplace" class="btn-doctolib" target="_blank">Prendre RDV sur Doctolib &rarr;</a>
+                <div class="btn-group">
+                    <a href="https://www.doctolib.fr/masseur-kinesitherapeute/epagny-metz-tessy/audrey-laplace" class="btn btn-doctolib" target="_blank">Prendre RDV sur Doctolib &rarr;</a>
                 </div>
             </div>
         </div>
-    </section>
+
+        <div class="info-grid">
+            
+            <div class="info-box">
+                <h2>Expertises &amp; Diplômes</h2>
+                <ul class="timeline">
+                    <li><strong>Diplôme d'État de Masseur-Kinésithérapeute</strong></li>
+                    <li><strong>Rééducation Fonctionnelle :</strong> Prise en charge individualisée des affections articulaires et musculaires.</li>
+                    <li><strong>Posturologie &amp; Mouvement :</strong> Analyse globale de la posture et correction du geste.</li>
+                    <li><strong>Rééducation Active :</strong> Accompagnement progressif vers l'autonomie physique.</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h2>Déroulement d'une Prise en Charge</h2>
+                <ul class="timeline">
+                    <li><strong>1. Bilan Initial :</strong> Bilan clinique précis et évaluation fonctionnelle.</li>
+                    <li><strong>2. Soins Adaptés :</strong> Combinaison de techniques manuelles et d’exercices actifs ciblés.</li>
+                    <li><strong>3. Autonomisation :</strong> Conseils personnalisés pour entretenir les bénéfices des séances.</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="info-box" style="margin-top: 30px;">
+            <h2>Informations Pratiques &amp; Modalités</h2>
+            <p><strong>Cabinet :</strong> Alpes Kiné Mouv' — 40 Rue de la Grenette, 74370 Epagny Metz-Tessy<br>
+            <strong>Équipements :</strong> Consultations en salle individuelle et travail actif sur plateau technique.<br>
+            <strong>À apporter lors du 1er RDV :</strong> Votre ordonnance médicale, votre carte Vitale et vos examens d'imagerie récents.</p>
+        </div>
+
+    </div>
 
     <footer>
         <p>&copy; 2026 Alpes Kiné Mouv' — 40 Rue de la Grenette, 74370 Epagny Metz-Tessy</p>
-        <p><a href="../index.html">Retour à l'accueil du cabinet</a></p>
+        <p style="margin-top: 10px;"><a href="../index.html">Retour à l'accueil du cabinet</a></p>
     </footer>
 
 </body>
