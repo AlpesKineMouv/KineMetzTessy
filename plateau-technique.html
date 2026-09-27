@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plateau Technique & Equipements | Alpes Kiné Mouv'</title>
-    <meta name="description" content="Découvrez le plateau technique et les équipements de rééducation du cabinet Alpes Kiné Mouv' à Epagny Metz-Tessy : gymnase, matériel de réathlétisation et salles individuelles.">
+    <title>Plateau Technique &amp; Équipements | Cabinet Alpes Kiné Mouv' - Epagny Metz-Tessy</title>
+    <meta name="description" content="Découvrez le plateau technique et le gymnase de rééducation active du cabinet Alpes Kiné Mouv' à Epagny Metz-Tessy (Bassin annécien). Équipements de pointe, salles individuelles et matériel de réathlétisation.">
     
-    <meta name="robots" content="index, follow">
+    <!-- Indexation & Référencement (Robots / IA) -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="sitemap" type="application/xml" href="sitemap.xml">
+
+    <!-- Design & Typographies -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
@@ -48,7 +51,7 @@
             z-index: 1000;
         }
 
-        /* Supprime le soulignement et la couleur violette/bleue du lien logo */
+        /* Supprime le soulignement et la couleur bleue du lien logo */
         a.logo-container, 
         a.logo-container:visited, 
         a.logo-container:hover, 
@@ -61,8 +64,7 @@
         }
 
         a.logo-container img {
-            height: 50px !important;
-            max-height: 50px !important;
+            height: 60px !important;
             width: auto !important;
             object-fit: contain !important;
             filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
@@ -82,14 +84,9 @@
             text-decoration: none !important;
         }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
         nav a {
-            text-decoration: none !important;
+            margin-left: 20px;
+            text-decoration: none;
             color: var(--texte-sombre);
             font-weight: 500;
             transition: color 0.3s;
@@ -106,67 +103,95 @@
             border-radius: 25px !important;
             text-decoration: none !important;
             font-weight: 600 !important;
-            transition: background-color 0.3s !important;
+            transition: background-color 0.3s, transform 0.2s !important;
             display: inline-block !important;
         }
 
         .btn-doctolib:hover {
             background-color: #008f58 !important;
+            transform: translateY(-2px);
         }
 
         .hero-simple {
-            background: var(--blanc);
-            color: var(--texte-sombre);
-            padding: 50px 5% 20px;
+            background: linear-gradient(135deg, rgba(27,73,101,0.95), rgba(0,168,107,0.85));
+            color: var(--blanc);
+            padding: 60px 5%;
             text-align: center;
         }
 
         .hero-simple h1 {
-            color: var(--bleu-alpin);
-            font-size: 2.3rem;
+            font-size: 2.4rem;
             margin-bottom: 15px;
         }
 
         .hero-simple p {
-            font-size: 1.15rem;
-            max-width: 800px;
+            font-size: 1.2rem;
+            max-width: 850px;
             margin: 0 auto;
-            color: var(--texte-sombre);
+            font-weight: 300;
         }
 
         .section {
-            padding: 40px 5% 60px;
+            padding: 60px 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .grid-gallery {
+        .section-title {
+            text-align: center;
+            color: var(--bleu-alpin);
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: var(--vert-mouvement);
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            gap: 30px;
         }
 
-        .gallery-card {
+        .card {
             background: var(--gris-clair);
             border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-left: 5px solid var(--bleu-alpin);
         }
 
-        .gallery-card img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-        }
-
-        .gallery-card-body {
-            padding: 20px;
-        }
-
-        .gallery-card-body h3 {
+        .card h3 {
             color: var(--bleu-alpin);
             margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .equip-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .equip-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+
+        .equip-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--vert-mouvement);
+            font-weight: bold;
         }
 
         footer {
@@ -199,33 +224,55 @@
     </header>
 
     <section class="hero-simple">
-        <h1>Le Plateau Technique &amp; Le Gymnase</h1>
-        <p>Un espace de rééducation actif, lumineux et climatisé, spécialement conçu pour vous accompagner du bilan initial jusqu'au reconditionnement maximal.</p>
+        <h1>Plateau Technique &amp; Gymnase de Rééducation</h1>
+        <p>Un espace moderne de rééducation active, lumineux et entièrement équipé à Epagny Metz-Tessy.</p>
     </section>
 
     <section class="section">
-        <div class="grid-gallery">
-            <div class="gallery-card">
-                <img src="assets/cabinet-exterieur.jpg" alt="Gymnase de rééducation active" onerror="this.src='https://via.placeholder.com/400x240?text=Gymnase+de+Rééducation'">
-                <div class="gallery-card-body">
-                    <h3>Gymnase &amp; Espace Actif</h3>
-                    <p>Équipé pour le renforcement musculaire, le travail proprioceptif, le vélo, tapis de course et la réathlétisation sur mesure.</p>
-                </div>
+        <h2 class="section-title">Infrastructures &amp; Équipements de Rééducation</h2>
+        <p style="text-align: center; max-width: 900px; margin: 0 auto 40px; font-size: 1.15rem;">
+            Le cabinet <strong>Alpes Kiné Mouv'</strong> est conçu pour offrir des conditions optimales de soins, alliant confidentialité en salles individuelles et dynamisme d'un grand plateau technique dédié à la rééducation active et à la réathlétisation.
+        </p>
+
+        <div class="grid-3">
+            <div class="card">
+                <h3>Gymnase &amp; Cardio-Renforcement</h3>
+                <p>Matériel moderne pour le reconditionnement physique, le travail musculaire guidé et l'entraînement cardiovasculaire.</p>
+                <ul class="equip-list">
+                    <li>Tapis de course professionnel</li>
+                    <li>Vélo d'entraînement &amp; ergomètres</li>
+                    <li>Presse à cuisses et cage de renforcement</li>
+                    <li>Espaliers et matériel de traction</li>
+                </ul>
             </div>
 
-            <div class="gallery-card">
-                <img src="assets/cabinet-exterieur.jpg" alt="Salles de soin individuelles" onerror="this.src='https://via.placeholder.com/400x240?text=Salles+Individuelles'">
-                <div class="gallery-card-body">
-                    <h3>Salles Individuelles</h3>
-                    <p>Espaces confidentiels pour la thérapie manuelle, les bilans diagnostiques et la prise en charge personnalisée.</p>
-                </div>
+            <div class="card">
+                <h3>Salles de Consultation Individuelles</h3>
+                <p>Espaces confidentiels pour les bilans initiaux, la thérapie manuelle orthopédique et les soins spécialisés.</p>
+                <ul class="equip-list">
+                    <li>Salles de soins spacieuses (11 m²)</li>
+                    <li>Tables de traitement électriques réglables</li>
+                    <li>Appareil de pressothérapie (Starvac)</li>
+                    <li>Espace dédié à la sénologie et au drainage</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Proprioception &amp; Réathlétisation</h3>
+                <p>Équipements pour le travail de l'équilibre, le contrôle moteur, la prévention des récidives et le retour au sport.</p>
+                <ul class="equip-list">
+                    <li>Plateformes et coussins d'instabilité</li>
+                    <li>Élastiques de résistance progressive &amp; TRX</li>
+                    <li>Poids libres, kettebells &amp; balanciers</li>
+                    <li>Outils d'évaluation neurodynamique</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 Alpes Kiné Mouv' — 40 Rue de la Grenette, 74370 Epagny Metz-Tessy</p>
-        <p><a href="https://www.doctolib.fr/cabinet-de-kinesitherapie/epagny-metz-tessy/alpes-kine-mouv" target="_blank">Page Doctolib du Cabinet</a></p>
+        <p style="margin-top: 10px;"><a href="https://www.doctolib.fr/cabinet-de-kinesitherapie/epagny-metz-tessy/alpes-kine-mouv" target="_blank">Page Doctolib du Cabinet</a></p>
     </footer>
 
 </body>
