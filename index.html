@@ -19,7 +19,7 @@
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "name": "Alpes Kiné Mouv'",
-      "image": "https://www.alpeskinemouv.fr/assets/logo.jpg",
+      "image": "https://alpeskinemouv.github.io/KineMetzTessy/assets/logo.jpg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "40 Rue de la Grenette",
@@ -27,7 +27,7 @@
         "postalCode": "74370",
         "addressCountry": "FR"
       },
-      "url": "https://www.alpeskinemouv.fr",
+      "url": "https://alpeskinemouv.github.io/KineMetzTessy/",
       "priceRange": "Conventionné",
       "medicalSpecialty": ["Physiotherapy", "SportsMedicine"],
       "employee": [
@@ -74,10 +74,12 @@
             z-index: 1000;
         }
 
+        /* Style du logo et de la marque cliquables */
         .logo-container {
             display: flex;
             align-items: center;
             gap: 18px;
+            text-decoration: none;
         }
 
         .logo-container img {
@@ -88,7 +90,7 @@
             transition: transform 0.3s ease;
         }
 
-        .logo-container img:hover {
+        .logo-container:hover img {
             transform: scale(1.03);
         }
 
@@ -127,7 +129,6 @@
             transform: translateY(-2px);
         }
 
-        /* Section Hero mise à jour avec le grand logo */
         .hero {
             background: linear-gradient(135deg, rgba(27,73,101,0.95), rgba(0,168,107,0.85)), url('assets/cabinet-exterieur.jpg') center/cover;
             color: var(--blanc);
@@ -272,10 +273,11 @@
 <body>
 
     <header>
-        <div class="logo-container">
+        <!-- Logo et Titre cliquables ramenant vers l'accueil -->
+        <a href="index.html" class="logo-container">
             <img src="assets/logo.jpg" alt="Alpes Kiné Mouv'">
             <span class="brand-title">ALPES KINÉ MOUV'</span>
-        </div>
+        </a>
         <nav>
             <a href="index.html">Accueil</a>
             <a href="plateau-technique.html">Plateau Technique</a>
