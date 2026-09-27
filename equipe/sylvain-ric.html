@@ -3,32 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sylvain RIC | Masseur-Kinésithérapeute à Epagny Metz-Tessy - Alpes Kiné Mouv'</title>
-    <meta name="description" content="Profil professionnel de Sylvain RIC, kinésithérapeute co-fondateur d'Alpes Kiné Mouv' à Epagny Metz-Tessy. Spécialiste du rachis, de l'épaule et de la kinésithérapie du sport.">
+    <title>Sylvain RIC - Masseur-Kinésithérapeute | Alpes Kiné Mouv'</title>
+    <meta name="description" content="Fiche de Sylvain RIC, masseur-kinésithérapeute au cabinet Alpes Kiné Mouv' à Epagny Metz-Tessy. Spécialiste du rachis, méthode McKenzie et kinésithérapie du sport.">
+    
+    <meta name="robots" content="index, follow">
+    <link rel="sitemap" type="application/xml" href="../sitemap.xml">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <style>
-        :root { --bleu-alpin: #1B4965; --vert-mouvement: #00A86B; --gris-clair: #F8F9FA; --texte-sombre: #2B2D42; --blanc: #FFFFFF; }
-        body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; color: var(--texte-sombre); line-height: 1.6; background-color: var(--blanc); }
-        header { padding: 1rem 5%; background: var(--blanc); box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .container { max-width: 1050px; margin: 40px auto; padding: 0 20px; }
-        .profile-card { display: grid; grid-template-columns: 260px 1fr; gap: 35px; background: var(--gris-clair); padding: 35px; border-radius: 16px; border-left: 6px solid var(--vert-mouvement); box-shadow: 0 4px 20px rgba(0,0,0,0.04); align-items: center; }
-        .profile-photo { width: 100%; height: 280px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .profile-details h1 { margin: 0; color: var(--bleu-alpin); font-family: 'Montserrat', sans-serif; font-size: 2.2rem; }
-        .profile-details h3 { margin: 5px 0 15px; color: var(--vert-mouvement); font-weight: 600; }
-        .quote { font-style: italic; background: var(--blanc); padding: 12px 18px; border-radius: 8px; border-left: 3px solid var(--bleu-alpin); margin: 15px 0; font-size: 0.95rem; }
-        .btn-group { display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
-        .btn { padding: 10px 22px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: transform 0.2s; }
-        .btn-doctolib { background: var(--vert-mouvement); color: var(--blanc); }
-        .btn-site { background: var(--bleu-alpin); color: var(--blanc); }
-        .btn:hover { transform: translateY(-2px); }
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .info-box { background: var(--blanc); border: 1px solid #EAEAEA; border-radius: 12px; padding: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
-        .info-box h2 { color: var(--bleu-alpin); font-family: 'Montserrat', sans-serif; font-size: 1.3rem; margin-top: 0; border-bottom: 2px solid var(--gris-clair); padding-bottom: 8px; }
-        .timeline { list-style: none; padding: 0; }
-        .timeline li { position: relative; padding-left: 25px; margin-bottom: 12px; }
-        .timeline li::before { content: '✓'; position: absolute; left: 0; color: var(--vert-mouvement); font-weight: bold; }
-        footer { background-color: var(--bleu-alpin); color: var(--blanc); text-align: center; padding: 30px 5%; margin-top: 60px; }
-        @media (max-width: 768px) { .profile-card { grid-template-columns: 1fr; text-align: center; } .profile-photo { width: 180px; height: 180px; border-radius: 50%; margin: 0 auto; } .btn-group { justify-content: center; } }
+        :root {
+            --bleu-alpin: #1B4965;
+            --vert-mouvement: #00A86B;
+            --gris-clair: #F8F9FA;
+            --texte-sombre: #2B2D42;
+            --blanc: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--texte-sombre);
+            background-color: var(--blanc);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 5%;
+            background-color: var(--blanc);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            text-decoration: none !important;
+            color: inherit;
+        }
+
+        .logo-container img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover img {
+            transform: scale(1.03);
+        }
+
+        .brand-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--bleu-alpin);
+            font-size: 1.35rem;
+            letter-spacing: 0.5px;
+            text-decoration: none !important;
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--texte-sombre);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--vert-mouvement);
+        }
+
+        .btn-doctolib {
+            background-color: var(--vert-mouvement);
+            color: var(--blanc);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .btn-doctolib:hover {
+            background-color: #008f58;
+        }
+
+        .btn-site {
+            background-color: var(--bleu-alpin);
+            color: var(--blanc);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .btn-site:hover {
+            background-color: #123348;
+        }
+
+        .section {
+            padding: 60px 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .profile-container {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--vert-mouvement);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .profile-details {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .profile-details h1 {
+            color: var(--bleu-alpin);
+            margin-top: 0;
+            font-size: 2.2rem;
+        }
+
+        .subtitle {
+            color: var(--vert-mouvement);
+            font-weight: 600;
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        footer {
+            background-color: var(--bleu-alpin);
+            color: var(--blanc);
+            text-align: center;
+            padding: 30px 5%;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: var(--vert-mouvement);
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -46,59 +191,26 @@
         </nav>
     </header>
 
-    <div class="container">
-        
-        <div class="profile-card">
-            <img src="../assets/sylvain-ric.jpg" alt="Sylvain RIC - Masseur-Kinésithérapeute" class="profile-photo">
+    <section class="section">
+        <div class="profile-container">
+            <img src="../assets/sylvain-ric.jpg" alt="Sylvain RIC" class="profile-img" onerror="this.src='https://via.placeholder.com/220?text=Sylvain+RIC'">
             <div class="profile-details">
                 <h1>Sylvain RIC</h1>
-                <h3>Masseur-Kinésithérapeute / Co-fondateur Alpes Kiné Mouv'</h3>
+                <div class="subtitle">Masseur-Kinésithérapeute DE &amp; Formateur | Spécialiste Rachis, Épaule &amp; Kiné du Sport</div>
                 
-                <div class="quote">
-                    « Redonner au patient le contrôle de sa santé grâce à une évaluation rigoureuse, un traitement manuel ciblé et une rééducation active personnalisée. »
-                </div>
+                <p>Co-fondateur du cabinet <strong>Alpes Kiné Mouv'</strong> à Epagny Metz-Tessy. Sylvain RIC est certifié en méthode McKenzie (MDT) et spécialisé dans la prise en charge active des troubles musculo-squelettiques (lombalgies, sciatiques, hernies discales, pathologies de l'épaule et réathlétisation).</p>
 
                 <div class="btn-group">
-                    <a href="https://www.doctolib.fr/masseur-kinesitherapeute/epagny-metz-tessy/sylvain-ric" class="btn btn-doctolib" target="_blank">Mon Agenda Doctolib &rarr;</a>
-                    <a href="https://www.sylvain-ric-kine.fr" class="btn btn-site" target="_blank">Mon Site Personnel &rarr;</a>
+                    <a href="https://www.doctolib.fr/masseur-kinesitherapeute/epagny-metz-tessy/sylvain-ric-epagny-metz-tessy" class="btn-doctolib" target="_blank">Mon Agenda Doctolib &rarr;</a>
+                    <a href="https://www.sylvain-ric-kine.fr" class="btn-site" target="_blank">Mon Site Personnel &rarr;</a>
                 </div>
             </div>
         </div>
-
-        <div class="info-grid">
-            
-            <div class="info-box">
-                <h2>Expertises & Diplômes</h2>
-                <ul class="timeline">
-                    <li><strong>Diplôme d'État de Masseur-Kinésithérapeute</strong></li>
-                    <li><strong>Pathologies du Rachis :</strong> Évaluation mécanique et rééducation active des cervicalgies, lombalgies et radiculopathies (Méthode McKenzie - MDT).</li>
-                    <li><strong>Épaule :</strong> Prise en charge des tendinopathies, conflits sous-acromiaux, instabilités et suites opératoires.</li>
-                    <li><strong>Kinésithérapie du Sport & TMO :</strong> Bilan du mouvement, réathlétisation active et prévention des récidives.</li>
-                </ul>
-            </div>
-
-            <div class="info-box">
-                <h2>Déroulement d'une Prise en Charge</h2>
-                <ul class="timeline">
-                    <li><strong>1. Bilan Initial :</strong> Évaluation mécanique complète et établissement d'un plan de traitement sur mesure.</li>
-                    <li><strong>2. Soins & Thérapie Manuelle :</strong> Soins individuels ciblés pour réduire la douleur et restaurer les amplitudes.</li>
-                    <li><strong>3. Rééducation Active :</strong> Exercices guidés sur le plateau technique pour consolider la récupération.</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="info-box" style="margin-top: 30px;">
-            <h2>Informations Pratiques & Modalités</h2>
-            <p><strong>Cabinet :</strong> Alpes Kiné Mouv' — 40 Rue de la Grenette, 74370 Epagny Metz-Tessy<br>
-            <strong>Équipements :</strong> Consultations en salle individuelle (11 m²) et réathlétisation sur plateau technique hautement équipé.<br>
-            <strong>À apporter lors du 1er RDV :</strong> Votre ordonnance médicale, votre carte Vitale, vos examens d'imagerie récents (radiographies, IRM) et une tenue confortable adaptée à l'exercice physique.</p>
-        </div>
-
-    </div>
+    </section>
 
     <footer>
         <p>&copy; 2026 Alpes Kiné Mouv' — 40 Rue de la Grenette, 74370 Epagny Metz-Tessy</p>
+        <p><a href="../index.html">Retour à l'accueil du cabinet</a></p>
     </footer>
 
 </body>
