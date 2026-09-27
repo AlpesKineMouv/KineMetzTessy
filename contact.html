@@ -19,16 +19,20 @@
             --blanc: #FFFFFF;
         }
 
-        body {
-            font-family: 'Roboto', sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
             color: var(--texte-sombre);
             background-color: var(--blanc);
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
         }
 
@@ -44,38 +48,48 @@
             z-index: 1000;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 18px;
+        /* Supprime le soulignement et la couleur violette/bleue du lien logo */
+        a.logo-container, 
+        a.logo-container:visited, 
+        a.logo-container:hover, 
+        a.logo-container:active {
+            display: flex !important;
+            align-items: center !important;
+            gap: 18px !important;
             text-decoration: none !important;
-            color: inherit;
+            color: inherit !important;
         }
 
-        .logo-container img {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
+        a.logo-container img {
+            height: 50px !important;
+            max-height: 50px !important;
+            width: auto !important;
+            object-fit: contain !important;
             filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
             transition: transform 0.3s ease;
         }
 
-        .logo-container:hover img {
+        a.logo-container:hover img {
             transform: scale(1.03);
         }
 
         .brand-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--bleu-alpin);
-            font-size: 1.35rem;
-            letter-spacing: 0.5px;
+            font-family: 'Montserrat', sans-serif !important;
+            font-weight: 700 !important;
+            color: var(--bleu-alpin) !important;
+            font-size: 1.35rem !important;
+            letter-spacing: 0.5px !important;
             text-decoration: none !important;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         nav a {
-            margin-left: 20px;
-            text-decoration: none;
+            text-decoration: none !important;
             color: var(--texte-sombre);
             font-weight: 500;
             transition: color 0.3s;
@@ -86,28 +100,42 @@
         }
 
         .btn-doctolib {
-            background-color: var(--vert-mouvement);
-            color: var(--blanc);
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
+            background-color: var(--vert-mouvement) !important;
+            color: var(--blanc) !important;
+            padding: 10px 20px !important;
+            border-radius: 25px !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            transition: background-color 0.3s !important;
+            display: inline-block !important;
         }
 
         .btn-doctolib:hover {
-            background-color: #008f58;
+            background-color: #008f58 !important;
         }
 
         .hero-simple {
-            background: var(--bleu-alpin);
-            color: var(--blanc);
-            padding: 50px 5%;
+            background: var(--blanc);
+            color: var(--texte-sombre);
+            padding: 50px 5% 20px;
             text-align: center;
         }
 
+        .hero-simple h1 {
+            color: var(--bleu-alpin);
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-simple p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--texte-sombre);
+        }
+
         .section {
-            padding: 60px 5%;
+            padding: 40px 5% 60px;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -124,11 +152,13 @@
             border-radius: 12px;
             padding: 30px;
             border-left: 5px solid var(--bleu-alpin);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
         .contact-card h3 {
             color: var(--bleu-alpin);
             margin-top: 0;
+            margin-bottom: 15px;
         }
 
         footer {
@@ -174,9 +204,8 @@
 
             <div class="contact-card">
                 <h3>📞 Téléphone &amp; Rendez-vous</h3>
-                <p><strong>Téléphone :</strong> <a href="tel:0450116860" style="color: var(--bleu-alpin); font-weight: bold;">04 50 11 68 60</a></p>
-                <p>Prise de rendez-vous disponible en ligne 24h/24 via Doctolib.</p>
-                <br>
+                <p><strong>Téléphone :</strong> <a href="tel:0450116860" style="color: var(--bleu-alpin); font-weight: bold; text-decoration: none;">04 50 11 68 60</a></p>
+                <p style="margin-top: 10px; margin-bottom: 20px;">Prise de rendez-vous disponible en ligne 24h/24 via Doctolib.</p>
                 <a href="https://www.doctolib.fr/cabinet-de-kinesitherapie/epagny-metz-tessy/alpes-kine-mouv" class="btn-doctolib" target="_blank">Accéder à Doctolib</a>
             </div>
         </div>
