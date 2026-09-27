@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://alpeskinemouv.github.io/KineMetzTessy/index.html</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://alpeskinemouv.github.io/KineMetzTessy/plateau-technique.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpeskinemouv.github.io/KineMetzTessy/contact.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alpeskinemouv.github.io/KineMetzTessy/equipe/sylvain-ric.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alpeskinemouv.github.io/KineMetzTessy/equipe/florence-chalot.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alpeskinemouv.github.io/KineMetzTessy/equipe/damien-bourguin.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alpeskinemouv.github.io/KineMetzTessy/equipe/audrey-laplace.html</loc>
+    <priority>0.7</priority>
+  </url>
+</urlset>

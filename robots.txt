@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alpeskinemouv.github.io/KineMetzTessy/sitemap.xml
