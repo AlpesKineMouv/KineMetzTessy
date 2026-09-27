@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact &amp; Accès | Alpes Kiné Mouv' - Epagny Metz-Tessy</title>
-    <meta name="description" content="Contactez le cabinet de kinésithérapie Alpes Kiné Mouv' à Epagny Metz-Tessy. Adresse, téléphone et accès Doctolib.">
+    <title>Contact &amp; Accès | Cabinet Alpes Kiné Mouv' - Epagny Metz-Tessy</title>
+    <meta name="description" content="Toutes les informations pratiques pour accéder au cabinet Alpes Kiné Mouv' à Epagny Metz-Tessy : adresse, téléphone, plan d'accès et réservation Doctolib.">
     
-    <meta name="robots" content="index, follow">
+    <!-- Indexation & Référencement (Robots / IA) -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="sitemap" type="application/xml" href="sitemap.xml">
+
+    <!-- Design & Typographies -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
@@ -48,7 +51,7 @@
             z-index: 1000;
         }
 
-        /* Supprime le soulignement et la couleur violette/bleue du lien logo */
+        /* Supprime le soulignement et la couleur bleue du lien logo */
         a.logo-container, 
         a.logo-container:visited, 
         a.logo-container:hover, 
@@ -61,8 +64,7 @@
         }
 
         a.logo-container img {
-            height: 50px !important;
-            max-height: 50px !important;
+            height: 60px !important;
             width: auto !important;
             object-fit: contain !important;
             filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
@@ -82,14 +84,9 @@
             text-decoration: none !important;
         }
 
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
         nav a {
-            text-decoration: none !important;
+            margin-left: 20px;
+            text-decoration: none;
             color: var(--texte-sombre);
             font-weight: 500;
             transition: color 0.3s;
@@ -106,59 +103,75 @@
             border-radius: 25px !important;
             text-decoration: none !important;
             font-weight: 600 !important;
-            transition: background-color 0.3s !important;
+            transition: background-color 0.3s, transform 0.2s !important;
             display: inline-block !important;
         }
 
         .btn-doctolib:hover {
             background-color: #008f58 !important;
+            transform: translateY(-2px);
         }
 
         .hero-simple {
-            background: var(--blanc);
-            color: var(--texte-sombre);
-            padding: 50px 5% 20px;
+            background: linear-gradient(135deg, rgba(27,73,101,0.95), rgba(0,168,107,0.85));
+            color: var(--blanc);
+            padding: 60px 5%;
             text-align: center;
         }
 
         .hero-simple h1 {
-            color: var(--bleu-alpin);
-            font-size: 2.3rem;
+            font-size: 2.4rem;
             margin-bottom: 15px;
         }
 
         .hero-simple p {
-            font-size: 1.15rem;
-            max-width: 800px;
+            font-size: 1.2rem;
+            max-width: 850px;
             margin: 0 auto;
-            color: var(--texte-sombre);
+            font-weight: 300;
         }
 
         .section {
-            padding: 40px 5% 60px;
-            max-width: 1000px;
+            padding: 60px 5%;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .contact-grid {
+        .grid-2 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
         }
 
-        .contact-card {
+        .info-card {
             background: var(--gris-clair);
             border-radius: 12px;
-            padding: 30px;
-            border-left: 5px solid var(--bleu-alpin);
+            padding: 35px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-left: 5px solid var(--bleu-alpin);
         }
 
-        .contact-card h3 {
+        .info-card h2 {
             color: var(--bleu-alpin);
+            font-size: 1.4rem;
             margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #EAEAEA;
+            padding-bottom: 10px;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-list li {
             margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .info-list strong {
+            color: var(--bleu-alpin);
         }
 
         footer {
@@ -191,29 +204,43 @@
     </header>
 
     <section class="hero-simple">
-        <h1>Contact &amp; Accès</h1>
-        <p>Retrouvez-nous au cabinet à Epagny Metz-Tessy</p>
+        <h1>Contact, Accès &amp; Rendez-vous</h1>
+        <p>Retrouvez-nous facilement à Epagny Metz-Tessy, à proximité immédiate d'Annecy.</p>
     </section>
 
     <section class="section">
-        <div class="contact-grid">
-            <div class="contact-card">
-                <h3>📍 Adresse du Cabinet</h3>
-                <p><strong>Alpes Kiné Mouv'</strong><br>40 Rue de la Grenette<br>74370 Epagny Metz-Tessy</p>
+        <div class="grid-2">
+            <div class="info-card">
+                <h2>📍 Coordonnées &amp; Localisation</h2>
+                <ul class="info-list">
+                    <li><strong>Cabinet :</strong> Alpes Kiné Mouv'</li>
+                    <li><strong>Adresse :</strong> 40 Rue de la Grenette, 74370 Epagny Metz-Tessy</li>
+                    <li><strong>Secteur :</strong> Bassin annécien (Epagny, Metz-Tessy, Annecy, Meythet, Poisy, Pringy)</li>
+                    <li><strong>Téléphone :</strong> <a href="tel:0450116860" style="color: var(--bleu-alpin); font-weight: bold; text-decoration: none;">04 50 11 68 60</a></li>
+                </ul>
             </div>
 
-            <div class="contact-card">
-                <h3>📞 Téléphone &amp; Rendez-vous</h3>
-                <p><strong>Téléphone :</strong> <a href="tel:0450116860" style="color: var(--bleu-alpin); font-weight: bold; text-decoration: none;">04 50 11 68 60</a></p>
-                <p style="margin-top: 10px; margin-bottom: 20px;">Prise de rendez-vous disponible en ligne 24h/24 via Doctolib.</p>
-                <a href="https://www.doctolib.fr/cabinet-de-kinesitherapie/epagny-metz-tessy/alpes-kine-mouv" class="btn-doctolib" target="_blank">Accéder à Doctolib</a>
+            <div class="info-card">
+                <h2>📅 Prise de Rendez-vous</h2>
+                <p style="margin-bottom: 20px;">Afin de garantir la fluidité des agendas et de vous offrir une disponibilité optimale, la prise de rendez-vous s'effectue directement en ligne sur la plateforme Doctolib.</p>
+                <p style="margin-bottom: 25px;"><strong>Praticiens du cabinet :</strong> Sylvain RIC, Florence CHALOT, Damien BOURGUIN, Audrey LAPLACE et Amaryne LECONTE.</p>
+                <a href="https://www.doctolib.fr/cabinet-de-kinesitherapie/epagny-metz-tessy/alpes-kine-mouv" class="btn-doctolib" target="_blank">Prendre rendez-vous sur Doctolib &rarr;</a>
             </div>
+        </div>
+
+        <div class="info-card" style="margin-top: 35px;">
+            <h2>ℹ️ Venir au Cabinet &amp; Modalités</h2>
+            <ul class="info-list">
+                <li><strong>Stationnement :</strong> Places de parking à proximité du cabinet pour faciliter votre venue.</li>
+                <li><strong>Soins à Domicile :</strong> Consultations à domicile proposées sur le secteur d'Epagny Metz-Tessy et communes limitrophes.</li>
+                <li><strong>Documents à prévoir lors du 1er RDV :</strong> Votre ordonnance médicale, votre carte Vitale et vos examens d'imagerie médicale récents.</li>
+            </ul>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 Alpes Kiné Mouv' — 40 Rue de la Grenette, 74370 Epagny Metz-Tessy</p>
-        <p><a href="https://www.doctolib.fr/cabinet-de-kinesitherapie/epagny-metz-tessy/alpes-kine-mouv" target="_blank">Page Doctolib du Cabinet</a></p>
+        <p style="margin-top: 10px;"><a href="https://www.doctolib.fr/cabinet-de-kinesitherapie/epagny-metz-tessy/alpes-kine-mouv" target="_blank">Page Doctolib du Cabinet</a></p>
     </footer>
 
 </body>
