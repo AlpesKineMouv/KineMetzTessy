@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateau Technique & Gymnase | Alpes Kiné Mouv' Epagny Metz-Tessy</title>
+    <meta name="description" content="Découvrez les équipements d'Alpes Kiné Mouv' à Epagny Metz-Tessy : rack à squat, presse, vélo, tapis et salles de soin individuelles.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bleu-alpin: #1B4965; --vert-mouvement: #00A86B; --gris-clair: #F8F9FA; --texte-sombre: #2B2D42; --blanc: #FFFFFF; }
+        body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; color: var(--texte-sombre); line-height: 1.6; }
+        header { padding: 1rem 5%; background: var(--blanc); box-shadow: 0 2px 10px rgba(0,0,0,0.05); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .logo-container img { height: 45px; }
+        nav a { margin-left: 20px; text-decoration: none; color: var(--texte-sombre); font-weight: 500; }
+        nav a:hover { color: var(--vert-mouvement); }
+        .btn-doctolib { background-color: var(--vert-mouvement); color: var(--blanc); padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; }
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 30px 0; }
+        .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+        .equipment-list { background: var(--gris-clair); padding: 30px; border-radius: 12px; border-left: 5px solid var(--vert-mouvement); }
+        footer { background-color: var(--bleu-alpin); color: var(--blanc); text-align: center; padding: 30px 5%; margin-top: 60px; }
+        footer a { color: var(--vert-mouvement); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo.jpg" alt="Alpes Kiné Mouv'">
+            <span style="font-weight:700; color:var(--bleu-alpin); font-family:'Montserrat';">ALPES KINÉ MOUV'</span>
+        </div>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="plateau-technique.html">Plateau Technique</a>
+            <a href="contact.html">Contact</a>
+            <a href="https://www.doctolib.fr/cabinet-de-kinesitherapie/epagny-metz-tessy/alpes-kine-mouv" class="btn-doctolib" target="_blank">Prendre RDV (Cabinet)</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 style="color:var(--bleu-alpin); font-family:'Montserrat'; text-align:center;">Le Plateau Technique & Le Gymnase</h1>
+        <p style="text-align:center; max-width:850px; margin:0 auto 30px;">
+            Un espace de rééducation actif, lumineux et climatisé, spécialement conçu pour vous accompagner du bilan initial jusqu'au reconditionnement maximal.
+        </p>
+
+        <div class="gallery">
+            <img src="assets/gymnase-1.jpg" alt="Gymnase Alpes Kiné Mouv' - Espace guidé et renforcement">
+            <img src="assets/gymnase-2.jpg" alt="Plateau technique - Rack à squat et poids libres">
+            <img src="assets/gymnase-3.jpg" alt="Espace cardio et réhabilitation active">
+        </div>
+
+        <div class="equipment-list">
+            <h2 style="color:var(--bleu-alpin); font-family:'Montserrat'; margin-top:0;">Équipements du Cabinet</h2>
+            <ul>
+                <li><strong>Espace Renforcement & Force :</strong> Rack à squat, presse, machine multi-fonction (leg-extension & leg-curl), haltères et kettlebells.</li>
+                <li><strong>Espace Cardio & Réathlétisation :</strong> Tapis de course et vélo stationnaire.</li>
+                <li><strong>Espace Mobilité & Pilates :</strong> Espaliers, matériel de Pilates, élastiques, ballons de rééducation.</li>
+                <li><strong>Salles Individuelles :</strong> 3 salles de soin individuelles d'environ 11 m² assurant confidentialité et sérénité.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Alpes Kiné Mouv' — 40 Rue de la Grenette, 74370 Epagny Metz-Tessy</p>
+        <p><a href="https://www.doctolib.fr/cabinet-de-kinesitherapie/epagny-metz-tessy/alpes-kine-mouv" target="_blank">Page Doctolib du Cabinet</a></p>
+    </footer>
+
+</body>
+</html>
