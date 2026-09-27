@@ -19,16 +19,20 @@
             --blanc: #FFFFFF;
         }
 
-        body {
-            font-family: 'Roboto', sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
             color: var(--texte-sombre);
             background-color: var(--blanc);
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
         }
 
@@ -44,39 +48,48 @@
             z-index: 1000;
         }
 
-        /* Correctif style lien logo en-tête */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 18px;
+        /* Supprime le soulignement et la couleur violette/bleue du lien logo */
+        a.logo-container, 
+        a.logo-container:visited, 
+        a.logo-container:hover, 
+        a.logo-container:active {
+            display: flex !important;
+            align-items: center !important;
+            gap: 18px !important;
             text-decoration: none !important;
-            color: inherit;
+            color: inherit !important;
         }
 
-        .logo-container img {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
+        a.logo-container img {
+            height: 50px !important;
+            max-height: 50px !important;
+            width: auto !important;
+            object-fit: contain !important;
             filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
             transition: transform 0.3s ease;
         }
 
-        .logo-container:hover img {
+        a.logo-container:hover img {
             transform: scale(1.03);
         }
 
         .brand-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--bleu-alpin);
-            font-size: 1.35rem;
-            letter-spacing: 0.5px;
+            font-family: 'Montserrat', sans-serif !important;
+            font-weight: 700 !important;
+            color: var(--bleu-alpin) !important;
+            font-size: 1.35rem !important;
+            letter-spacing: 0.5px !important;
             text-decoration: none !important;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         nav a {
-            margin-left: 20px;
-            text-decoration: none;
+            text-decoration: none !important;
             color: var(--texte-sombre);
             font-weight: 500;
             transition: color 0.3s;
@@ -87,28 +100,42 @@
         }
 
         .btn-doctolib {
-            background-color: var(--vert-mouvement);
-            color: var(--blanc);
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
+            background-color: var(--vert-mouvement) !important;
+            color: var(--blanc) !important;
+            padding: 10px 20px !important;
+            border-radius: 25px !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            transition: background-color 0.3s !important;
+            display: inline-block !important;
         }
 
         .btn-doctolib:hover {
-            background-color: #008f58;
+            background-color: #008f58 !important;
         }
 
         .hero-simple {
-            background: var(--bleu-alpin);
-            color: var(--blanc);
-            padding: 50px 5%;
+            background: var(--blanc);
+            color: var(--texte-sombre);
+            padding: 50px 5% 20px;
             text-align: center;
         }
 
+        .hero-simple h1 {
+            color: var(--bleu-alpin);
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-simple p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--texte-sombre);
+        }
+
         .section {
-            padding: 60px 5%;
+            padding: 40px 5% 60px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -129,7 +156,7 @@
 
         .gallery-card img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
         }
 
@@ -172,26 +199,22 @@
     </header>
 
     <section class="hero-simple">
-        <h1>Plateau Technique &amp; Equipements</h1>
-        <p>Un espace moderne dédié à la rééducation active et au reconditionnement physique à Epagny Metz-Tessy.</p>
+        <h1>Le Plateau Technique &amp; Le Gymnase</h1>
+        <p>Un espace de rééducation actif, lumineux et climatisé, spécialement conçu pour vous accompagner du bilan initial jusqu'au reconditionnement maximal.</p>
     </section>
 
     <section class="section">
-        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem;">
-            Notre cabinet dispose de salles de soin individuelles pour les bilans et traitements personnalisés, ainsi que d'un gymnase équipé pour la rééducation active et la réathlétisation.
-        </p>
-
         <div class="grid-gallery">
             <div class="gallery-card">
-                <img src="assets/cabinet-exterieur.jpg" alt="Gymnase de rééducation active" onerror="this.src='https://via.placeholder.com/400x220?text=Gymnase+de+Rééducation'">
+                <img src="assets/cabinet-exterieur.jpg" alt="Gymnase de rééducation active" onerror="this.src='https://via.placeholder.com/400x240?text=Gymnase+de+Rééducation'">
                 <div class="gallery-card-body">
                     <h3>Gymnase &amp; Espace Actif</h3>
-                    <p>Equipé pour le renforcement musculaire, le travail proprioceptif et la réathlétisation sur mesure.</p>
+                    <p>Équipé pour le renforcement musculaire, le travail proprioceptif, le vélo, tapis de course et la réathlétisation sur mesure.</p>
                 </div>
             </div>
 
             <div class="gallery-card">
-                <img src="assets/cabinet-exterieur.jpg" alt="Salles de soin individuelles" onerror="this.src='https://via.placeholder.com/400x220?text=Salles+Individuelles'">
+                <img src="assets/cabinet-exterieur.jpg" alt="Salles de soin individuelles" onerror="this.src='https://via.placeholder.com/400x240?text=Salles+Individuelles'">
                 <div class="gallery-card-body">
                     <h3>Salles Individuelles</h3>
                     <p>Espaces confidentiels pour la thérapie manuelle, les bilans diagnostiques et la prise en charge personnalisée.</p>
