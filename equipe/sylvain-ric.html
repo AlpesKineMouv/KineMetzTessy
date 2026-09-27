@@ -19,16 +19,20 @@
             --blanc: #FFFFFF;
         }
 
-        body {
-            font-family: 'Roboto', sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
             color: var(--texte-sombre);
             background-color: var(--blanc);
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
         }
 
@@ -44,38 +48,40 @@
             z-index: 1000;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 18px;
+        /* Dimensionnement strict du logo pour éviter qu'il ne devienne géant */
+        a.logo-container {
+            display: flex !important;
+            align-items: center !important;
+            gap: 15px !important;
             text-decoration: none !important;
-            color: inherit;
+            color: inherit !important;
         }
 
-        .logo-container img {
-            height: 60px;
-            width: auto;
-            object-fit: contain;
-            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
-            transition: transform 0.3s ease;
-        }
-
-        .logo-container:hover img {
-            transform: scale(1.03);
+        a.logo-container img {
+            height: 50px !important;
+            max-height: 50px !important;
+            width: auto !important;
+            object-fit: contain !important;
+            display: block !important;
         }
 
         .brand-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: var(--bleu-alpin);
-            font-size: 1.35rem;
-            letter-spacing: 0.5px;
+            font-family: 'Montserrat', sans-serif !important;
+            font-weight: 700 !important;
+            color: var(--bleu-alpin) !important;
+            font-size: 1.35rem !important;
+            letter-spacing: 0.5px !important;
             text-decoration: none !important;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         nav a {
-            margin-left: 20px;
-            text-decoration: none;
+            text-decoration: none !important;
             color: var(--texte-sombre);
             font-weight: 500;
             transition: color 0.3s;
@@ -86,33 +92,31 @@
         }
 
         .btn-doctolib {
-            background-color: var(--vert-mouvement);
-            color: var(--blanc);
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-            display: inline-block;
+            background-color: var(--vert-mouvement) !important;
+            color: var(--blanc) !important;
+            padding: 10px 20px !important;
+            border-radius: 25px !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            display: inline-block !important;
         }
 
         .btn-doctolib:hover {
-            background-color: #008f58;
+            background-color: #008f58 !important;
         }
 
         .btn-site {
-            background-color: var(--bleu-alpin);
-            color: var(--blanc);
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s;
-            display: inline-block;
+            background-color: var(--bleu-alpin) !important;
+            color: var(--blanc) !important;
+            padding: 10px 20px !important;
+            border-radius: 25px !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            display: inline-block !important;
         }
 
         .btn-site:hover {
-            background-color: #123348;
+            background-color: #123348 !important;
         }
 
         .section {
@@ -144,7 +148,7 @@
 
         .profile-details h1 {
             color: var(--bleu-alpin);
-            margin-top: 0;
+            margin-bottom: 5px;
             font-size: 2.2rem;
         }
 
