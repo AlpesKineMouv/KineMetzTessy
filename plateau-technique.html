@@ -200,7 +200,7 @@
             border-radius: 2px;
         }
 
-        /* GALERIE PHOTOS */
+        /* GALERIE PHOTOS AVEC CURSEUR ZOOM */
         .photo-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -214,6 +214,7 @@
             overflow: hidden;
             box-shadow: 0 6px 20px rgba(0,0,0,0.06);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: zoom-in;
         }
 
         .photo-card:hover {
@@ -278,6 +279,61 @@
             font-weight: bold;
         }
 
+        /* STYLES MODALE LIGHTBOX (ZOOM PHOTO) */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.88);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            color: #FFFFFF;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #FFFFFF;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            color: var(--vert-mouvement);
+        }
+
         footer {
             background-color: var(--bleu-alpin);
             color: var(--blanc);
@@ -314,19 +370,19 @@
 
     <section class="section">
         
-        <!-- Galerie de Photos Visuelles du Plateau Technique -->
+        <!-- Galerie de Photos Visuelles du Plateau Technique (Cliquables) -->
         <div class="photo-gallery">
-            <div class="photo-card">
+            <div class="photo-card" onclick="openLightbox('assets/gymnase-1.jpg', 'Espace de réathlétisation &amp; tapis de course')">
                 <img src="assets/gymnase-1.jpg" alt="Gymnase de rééducation active Alpes Kiné Mouv'">
-                <div class="photo-caption">Espace de réathlétisation &amp; tapis de course</div>
+                <div class="photo-caption">Espace de réathlétisation &amp; tapis de course 🔍</div>
             </div>
-            <div class="photo-card">
+            <div class="photo-card" onclick="openLightbox('assets/gymnase-2.jpg', 'Presse, tirage &amp; renforcement musculaire')">
                 <img src="assets/gymnase-2.jpg" alt="Équipements de renforcement guidé">
-                <div class="photo-caption">Presse, tirage &amp; renforcement musculaire</div>
+                <div class="photo-caption">Presse, tirage &amp; renforcement musculaire 🔍</div>
             </div>
-            <div class="photo-card">
+            <div class="photo-card" onclick="openLightbox('assets/gymnase-3.jpg', 'Plateau technique lumineux &amp; espace proprioception')">
                 <img src="assets/gymnase-3.jpg" alt="Vue d'ensemble du plateau technique">
-                <div class="photo-caption">Plateau technique lumineux &amp; espace proprioception</div>
+                <div class="photo-caption">Plateau technique lumineux &amp; espace proprioception 🔍</div>
             </div>
         </div>
 
@@ -371,10 +427,49 @@
         </div>
     </section>
 
+    <!-- FENÊTRE MODALE POUR LE ZOOM DE PHOTO -->
+    <div id="lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Agrandissement photo">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
     <footer>
         <p>&copy; 2026 Alpes Kiné Mouv' — 40 Rue de la Grenette, 74370 Epagny Metz-Tessy</p>
         <p style="margin-top: 10px;"><a href="https://www.doctolib.fr/cabinet-de-kinesitherapie/epagny-metz-tessy/alpes-kine-mouv" target="_blank">Page Doctolib du Cabinet</a></p>
     </footer>
+
+    <!-- SCRIPT JAVASCRIPT DU ZOOM (LIGHTBOX) -->
+    <script>
+        function openLightbox(src, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+            
+            img.src = src;
+            cap.innerHTML = caption;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Empêche le défilement de la page en arrière-plan
+        }
+
+        function closeLightbox(event) {
+            // Ferme si on clique sur la croix ou à l'extérieur de l'image
+            if (event.target.id === 'lightbox' || event.target.className === 'lightbox-close') {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Réactive le défilement
+            }
+        }
+
+        // Fermeture avec la touche Échap (ESC)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 
 </body>
 </html>
