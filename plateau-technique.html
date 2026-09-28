@@ -200,6 +200,44 @@
             border-radius: 2px;
         }
 
+        /* GALERIE PHOTOS */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .photo-card {
+            background: var(--blanc);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-caption {
+            padding: 15px 20px;
+            background: var(--gris-clair);
+            font-size: 0.95rem;
+            color: var(--texte-sombre);
+            font-weight: 500;
+            text-align: center;
+            border-top: 2px solid #EAEAEA;
+        }
+
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -270,11 +308,28 @@
     </header>
 
     <section class="hero-simple">
-        <h1>Plateau Technique &amp; Gymnase de Rééducation</h1>
-        <p>Un espace moderne de rééducation active, lumineux et entièrement équipé à Epagny Metz-Tessy.</p>
+        <h1>Le Plateau Technique &amp; Le Gymnase</h1>
+        <p>Un espace de rééducation actif, lumineux et climatisé, spécialement conçu pour vous accompagner du bilan initial jusqu'au reconditionnement maximal.</p>
     </section>
 
     <section class="section">
+        
+        <!-- Galerie de Photos Visuelles du Plateau Technique -->
+        <div class="photo-gallery">
+            <div class="photo-card">
+                <img src="assets/plateau-1.jpg" alt="Gymnase de rééducation active Alpes Kiné Mouv'" onerror="this.src='assets/cabinet-exterieur.jpg'">
+                <div class="photo-caption">Espace de réathlétisation &amp; tapis de course</div>
+            </div>
+            <div class="photo-card">
+                <img src="assets/plateau-2.jpg" alt="Équipements de renforcement guidé" onerror="this.src='assets/cabinet-exterieur.jpg'">
+                <div class="photo-caption">Presse, tirage &amp; renforcement musculaire</div>
+            </div>
+            <div class="photo-card">
+                <img src="assets/plateau-3.jpg" alt="Vue d'ensemble du plateau technique" onerror="this.src='assets/cabinet-exterieur.jpg'">
+                <div class="photo-caption">Plateau technique lumineux &amp; espace proprioception</div>
+            </div>
+        </div>
+
         <h2 class="section-title">Infrastructures &amp; Équipements de Rééducation</h2>
         <p style="text-align: center; max-width: 900px; margin: 0 auto 40px; font-size: 1.15rem;">
             Le cabinet <strong>Alpes Kiné Mouv'</strong> est conçu pour offrir des conditions optimales de soins, alliant confidentialité en salles individuelles et dynamisme d'un grand plateau technique dédié à la rééducation active et à la réathlétisation.
