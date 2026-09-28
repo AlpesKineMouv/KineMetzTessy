@@ -220,6 +220,17 @@
             color: var(--bleu-alpin);
         }
 
+        /* PHOTO DU CABINET SEMAINE / EXTÉRIEUR */
+        .building-photo {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            margin-bottom: 35px;
+            display: block;
+        }
+
         footer {
             background-color: var(--bleu-alpin);
             color: var(--blanc);
@@ -255,6 +266,10 @@
     </section>
 
     <section class="section">
+        
+        <!-- Photo Extérieure du Cabinet -->
+        <img src="assets/cabinet-exterieur.jpg" alt="Devanture du cabinet Alpes Kiné Mouv' à Epagny Metz-Tessy" class="building-photo" onerror="this.style.display='none'">
+
         <div class="grid-2">
             <div class="info-card">
                 <h2>📍 Coordonnées &amp; Localisation</h2>
