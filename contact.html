@@ -220,15 +220,95 @@
             color: var(--bleu-alpin);
         }
 
-        /* PHOTO DU CABINET SEMAINE / EXTÉRIEUR */
+        /* PHOTO DU CABINET AVEC EFFET ZOOM/LIGHTBOX */
+        .building-photo-container {
+            position: relative;
+            margin-bottom: 35px;
+            cursor: zoom-in;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .building-photo-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
         .building-photo {
             width: 100%;
-            max-height: 380px;
+            max-height: 420px;
             object-fit: cover;
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            margin-bottom: 35px;
             display: block;
+        }
+
+        .photo-overlay-badge {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(27, 73, 101, 0.85);
+            color: #FFFFFF;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+        }
+
+        /* STYLES MODALE LIGHTBOX (ZOOM PHOTO) */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.88);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-caption {
+            color: #FFFFFF;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #FFFFFF;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            color: var(--vert-mouvement);
         }
 
         footer {
@@ -267,8 +347,11 @@
 
     <section class="section">
         
-        <!-- Photo Extérieure du Cabinet -->
-        <img src="assets/cabinet-exterieur.jpg" alt="Devanture du cabinet Alpes Kiné Mouv' à Epagny Metz-Tessy" class="building-photo" onerror="this.style.display='none'">
+        <!-- Photo Extérieure du Cabinet (Cliquable avec Zoom) -->
+        <div class="building-photo-container" onclick="openLightbox('assets/cabinet-exterieur.jpg', 'Devanture du cabinet Alpes Kiné Mouv\' à Epagny Metz-Tessy')">
+            <img src="assets/cabinet-exterieur.jpg" alt="Devanture du cabinet Alpes Kiné Mouv' à Epagny Metz-Tessy" class="building-photo" onerror="this.parentNode.style.display='none'">
+            <div class="photo-overlay-badge">Agrandir la photo 🔍</div>
+        </div>
 
         <div class="grid-2">
             <div class="info-card">
@@ -299,10 +382,47 @@
         </div>
     </section>
 
+    <!-- FENÊTRE MODALE POUR LE ZOOM DE PHOTO -->
+    <div id="lightbox" class="lightbox-modal" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Agrandissement photo">
+        <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+
     <footer>
         <p>&copy; 2026 Alpes Kiné Mouv' — 40 Rue de la Grenette, 74370 Epagny Metz-Tessy</p>
         <p style="margin-top: 10px;"><a href="https://www.doctolib.fr/cabinet-de-kinesitherapie/epagny-metz-tessy/alpes-kine-mouv" target="_blank">Page Doctolib du Cabinet</a></p>
     </footer>
+
+    <!-- SCRIPT JAVASCRIPT DU ZOOM (LIGHTBOX) -->
+    <script>
+        function openLightbox(src, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+            
+            img.src = src;
+            cap.innerHTML = caption;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Empêche le défilement de la page en arrière-plan
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.className === 'lightbox-close') {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto'; // Réactive le défilement
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
 
 </body>
 </html>
