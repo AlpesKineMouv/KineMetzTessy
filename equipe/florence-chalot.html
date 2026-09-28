@@ -36,6 +36,7 @@
             font-family: 'Montserrat', sans-serif;
         }
 
+        /* EN-TÊTE ORDINATEUR */
         header {
             display: flex;
             justify-content: space-between;
@@ -54,7 +55,7 @@
         a.logo-container:active {
             display: flex !important;
             align-items: center !important;
-            gap: 18px !important;
+            gap: 15px !important;
             text-decoration: none !important;
             color: inherit !important;
         }
@@ -65,11 +66,6 @@
             width: auto !important;
             object-fit: contain !important;
             filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
-            transition: transform 0.3s ease;
-        }
-
-        a.logo-container:hover img {
-            transform: scale(1.03);
         }
 
         .brand-title {
@@ -78,7 +74,7 @@
             color: var(--bleu-alpin) !important;
             font-size: 1.35rem !important;
             letter-spacing: 0.5px !important;
-            text-decoration: none !important;
+            white-space: nowrap !important;
         }
 
         nav {
@@ -92,10 +88,74 @@
             color: var(--texte-sombre);
             font-weight: 500;
             transition: color 0.3s;
+            white-space: nowrap;
         }
 
         nav a:hover {
             color: var(--vert-mouvement);
+        }
+
+        .btn {
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none !important;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: transform 0.2s, background-color 0.2s;
+            display: inline-block;
+        }
+
+        .btn-doctolib {
+            background-color: var(--vert-mouvement) !important;
+            color: var(--blanc) !important;
+            padding: 8px 18px !important;
+            border-radius: 25px !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            white-space: nowrap !important;
+            transition: background-color 0.3s !important;
+            display: inline-block !important;
+        }
+
+        .btn-doctolib:hover {
+            background-color: #008f58 !important;
+        }
+
+        /* OPTIMISATION SPÉCIALE MOBILE */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column !important;
+                gap: 12px !important;
+                padding: 0.8rem 3% !important;
+            }
+
+            a.logo-container {
+                gap: 10px !important;
+            }
+
+            a.logo-container img {
+                height: 40px !important;
+            }
+
+            .brand-title {
+                font-size: 1.1rem !important;
+            }
+
+            nav {
+                width: 100% !important;
+                justify-content: center !important;
+                flex-wrap: wrap !important;
+                gap: 10px 15px !important;
+            }
+
+            nav a {
+                font-size: 0.9rem !important;
+            }
+
+            .btn-doctolib {
+                padding: 6px 12px !important;
+                font-size: 0.85rem !important;
+            }
         }
 
         .container {
@@ -151,26 +211,6 @@
             gap: 15px;
             margin-top: 20px;
             flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 10px 22px;
-            border-radius: 25px;
-            text-decoration: none !important;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: transform 0.2s, background-color 0.2s;
-            display: inline-block;
-        }
-
-        .btn-doctolib {
-            background: var(--vert-mouvement);
-            color: var(--blanc) !important;
-        }
-
-        .btn-doctolib:hover {
-            background-color: #008f58;
-            transform: translateY(-2px);
         }
 
         .info-grid {
@@ -257,7 +297,7 @@
             <a href="../index.html">Accueil</a>
             <a href="../plateau-technique.html">Plateau Technique</a>
             <a href="../contact.html">Contact</a>
-            <a href="https://www.doctolib.fr/masseur-kinesitherapeute/epagny-metz-tessy/florence-chalot" class="btn btn-doctolib" target="_blank">Prendre RDV (Florence CHALOT)</a>
+            <a href="https://www.doctolib.fr/masseur-kinesitherapeute/epagny-metz-tessy/florence-chalot" class="btn-doctolib" target="_blank">Prendre RDV (Florence)</a>
         </nav>
     </header>
 
