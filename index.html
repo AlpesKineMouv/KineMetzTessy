@@ -268,6 +268,7 @@
             margin-top: 0;
         }
 
+        /* TUILES / CARTES PRATICIENS ENTIÈREMENT CLIQUABLES */
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -278,38 +279,67 @@
         .team-member {
             background: var(--blanc);
             border: 1px solid #EAEAEA;
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 22px 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
+            text-decoration: none !important;
+            color: inherit !important;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .team-member:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+            border-color: var(--vert-mouvement);
+        }
+
+        .team-member.disabled {
+            cursor: default;
+            opacity: 0.85;
+        }
+
+        .team-member.disabled:hover {
+            transform: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border-color: #EAEAEA;
         }
 
         .team-thumb {
-            width: 90px;
-            height: 90px;
+            width: 95px;
+            height: 95px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--vert-mouvement);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover .team-thumb {
+            transform: scale(1.05);
         }
 
         .team-member h4 {
-            margin: 10px 0 5px;
+            margin: 5px 0;
             color: var(--bleu-alpin);
+            font-size: 1.1rem;
         }
 
         .team-member p {
-            margin: 0 0 15px;
-            font-size: 0.9rem;
+            margin: 0 0 12px;
+            font-size: 0.88rem;
+            color: var(--texte-sombre);
         }
 
-        .team-member a {
+        .link-text {
             color: var(--vert-mouvement);
-            text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
+            display: inline-block;
         }
 
         footer {
@@ -374,36 +404,43 @@
     <section class="section" style="background-color: var(--gris-clair); border-radius: 12px;">
         <h2 class="section-title">L'Équipe des Praticiens</h2>
         <div class="team-grid">
-            <div class="team-member">
+            
+            <a href="equipe/sylvain-ric.html" class="team-member">
                 <img src="assets/sylvain-ric.jpg" alt="Sylvain RIC" class="team-thumb">
                 <h4>Sylvain RIC</h4>
                 <p>Kiné du Sport, Rachis &amp; Épaule</p>
-                <a href="equipe/sylvain-ric.html">Voir la fiche &rarr;</a>
-            </div>
-            <div class="team-member">
+                <span class="link-text">Voir la fiche &rarr;</span>
+            </a>
+
+            <a href="equipe/florence-chalot.html" class="team-member">
                 <img src="assets/florence-chalot.jpg" alt="Florence CHALOT" class="team-thumb">
                 <h4>Florence CHALOT</h4>
                 <p>Cancer du Sein &amp; Lymphologie</p>
-                <a href="equipe/florence-chalot.html">Voir la fiche &rarr;</a>
-            </div>
-            <div class="team-member">
+                <span class="link-text">Voir la fiche &rarr;</span>
+            </a>
+
+            <a href="equipe/damien-bourguin.html" class="team-member">
                 <img src="assets/damien-bourguin.jpg" alt="Damien BOURGUIN" class="team-thumb">
                 <h4>Damien BOURGUIN</h4>
                 <p>Kinésithérapie &amp; Rééducation Active</p>
-                <a href="equipe/damien-bourguin.html">Voir la fiche &rarr;</a>
-            </div>
-            <div class="team-member">
+                <span class="link-text">Voir la fiche &rarr;</span>
+            </a>
+
+            <a href="equipe/audrey-laplace.html" class="team-member">
+                <img src="assets/audrey-laplace.html" class="team-member" href="equipe/audrey-laplace.html">
                 <img src="assets/audrey-laplace.jpg" alt="Audrey LAPLACE" class="team-thumb">
                 <h4>Audrey LAPLACE</h4>
                 <p>Kinésithérapie &amp; Rééducation Active</p>
-                <a href="equipe/audrey-laplace.html">Voir la fiche &rarr;</a>
-            </div>
-            <div class="team-member">
+                <span class="link-text">Voir la fiche &rarr;</span>
+            </a>
+
+            <div class="team-member disabled">
                 <img src="assets/amaryne-leconte.jpg" alt="Amaryne LECONTE" class="team-thumb">
                 <h4>Amaryne LECONTE</h4>
                 <p>Masseur-Kinésithérapeute</p>
-                <span style="font-size:0.85rem; color:#666;">Fiche bientôt disponible</span>
+                <span style="font-size:0.85rem; color:#888;">Fiche bientôt disponible</span>
             </div>
+
         </div>
     </section>
 
