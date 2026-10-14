@@ -100,8 +100,15 @@
             letter-spacing: 0.5px;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
         nav a {
-            margin-left: 20px;
+            margin-left: 0;
             text-decoration: none;
             color: var(--texte-sombre);
             font-weight: 500;
@@ -266,6 +273,26 @@
         footer a {
             color: var(--vert-mouvement);
             text-decoration: none;
+        }
+
+        /* --- RESPONSIVE MOBILE POUR LE HEADER --- */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 5%;
+                text-align: center;
+            }
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+            .hero {
+                padding: 50px 5%;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
